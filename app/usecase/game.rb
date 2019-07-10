@@ -55,8 +55,15 @@ class Game
 
     private
 
+    def valid_json(json)
+        JSON.parse(json)
+        return true
+      rescue JSON::ParserError => e
+        return false
+    end
+
     def check_words(params)
-        if !params[:words].nil?
+        if (!params[:words].nil?) && (valid_json(params[:words]))
             words = JSON.parse params[:words]
         else
             words = nil
