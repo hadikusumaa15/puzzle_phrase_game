@@ -13,3 +13,7 @@
 * Address 
 1. deployed_url : https://tebak-kata-game15.herokuapp.com/
 2. local : localhost:<PORT>
+
+* Note:
+1. Implements SOLID from backend side
+2. Implements Unit tests (rails test)
