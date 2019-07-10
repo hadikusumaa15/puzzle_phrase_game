@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>GAME TEBAK KATA</h2>
+
+<form action="/game">
+  <%= @response[:soal] %> <br>
+  <input type="text" name="answer" value="">
+  <br>
+  <%= @response[:respon]%>
+  <input type="hidden" name="respon" value= <%= @response[:respon] %> >
+  <input type="hidden" name="points" value= <%= @response[:points] %> >
+  <input type="hidden" name="lanjut" value= <%= @response[:lanjut] %> >
+  <input type="hidden" name="words" value= <%= @response[:words] %> >
+  <input type="hidden" name="word" value= <%= @response[:word] %> >
+
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+<form action="/game">
+  <input type="submit" value="Restart">
+</form> 
+
+</body>
+</html>

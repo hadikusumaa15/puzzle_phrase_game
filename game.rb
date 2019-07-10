@@ -4,23 +4,14 @@ class Game
 
     def start_game
         lanjut = true
+        selesai = false
         points = 0
-        kata = kumpulan_kata
+        words = kumpulan_kata
         word = ambil_kata(kumpulan_kata)
         shuffled_word = shuffle_word(word)
         value = false
 
-        while lanjut == true
-            if value== true
-                kata = kata - [word]
-                if !kata.empty?
-                    word = ambil_kata(kata)
-                    shuffled_word = shuffle_word(word)
-                else
-                    lanjut = false
-                end
-            end
-
+        while selesai == false
             if lanjut == true
                 soal = soal(shuffled_word)
                 puts soal
@@ -31,6 +22,17 @@ class Game
                 puts respon
             else
                 finish_game(points)
+                selesai = true
+            end
+
+            if value == true
+                words = words - [word]
+                if !words.empty?
+                    word = ambil_kata(words)
+                    shuffled_word = shuffle_word(word)
+                else
+                    lanjut = false
+                end
             end
         end
     end
